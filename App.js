@@ -26,11 +26,11 @@ const App = () => {
 
       <View style={{
         height: '80%',
-        backgroundColor: 'while',
+        backgroundColor: '#FFFFFF',
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <Text style={{ fontWeight: 'bold', fontSize: 50 }}>{balanse} &#8381;</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 50, color: '#000000' }}>{balanse} &#8381;</Text>
       </View>
 
       <View style={styles.container}>
@@ -73,11 +73,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   background: {
+    backgroundColor: '#FFFFFF',
     borderRadius: 100,
     width: 60,
     height: 60
   },
   backgroundCenter: {
+    backgroundColor: '#FFFFFF',
     borderWidth: 2,
     borderColor: '#006600',
     elevation: 10,
