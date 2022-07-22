@@ -4,7 +4,7 @@ import { defaultState } from './src/defaultState'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons/faCreditCard'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping'
+import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons/faCartArrowDown'
 
 const App = () => {
 
@@ -26,7 +26,7 @@ const App = () => {
 
       <View style={{
         height: '80%',
-        // backgroundColor: '#FFCCCC',
+        backgroundColor: 'while',
         alignItems: 'center',
         justifyContent: 'center'
       }}>
@@ -40,7 +40,7 @@ const App = () => {
 
         <TouchableHighlight onPress={getCountBalance}>
           <View style={[styles.position, styles.backgroundCenter]}>
-            <FontAwesomeIcon icon={faCartShopping} size={32} />
+            <FontAwesomeIcon style={{ color: '#333333' }} icon={faCartArrowDown} size={32} />
           </View>
         </TouchableHighlight>
 
@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
     height: 60
   },
   backgroundCenter: {
+    borderWidth: 2,
+    borderColor: '#006600',
     elevation: 10,
     borderRadius: 100,
     width: 80,
