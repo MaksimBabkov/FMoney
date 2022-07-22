@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import { defaultState } from './src/defaultState'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons/faCreditCard'
@@ -38,17 +38,17 @@ const App = () => {
           <FontAwesomeIcon style={{ color: '#006600' }} icon={faChartLine} size={25} />
         </View>
 
-        <TouchableHighlight onPress={getCountBalance}>
+        <TouchableWithoutFeedback onPress={getCountBalance}>
           <View style={[styles.position, styles.backgroundCenter]}>
             <FontAwesomeIcon style={{ color: '#333333' }} icon={faCartArrowDown} size={32} />
           </View>
-        </TouchableHighlight>
+        </TouchableWithoutFeedback>
 
-        <TouchableHighlight onPress={postCountBalance}>
+        <TouchableWithoutFeedback onPress={postCountBalance}>
         <View style={[styles.position, styles.background]}>
           <FontAwesomeIcon style={{ color: '#006600' }} icon={faCreditCard} size={25} />
         </View>
-        </TouchableHighlight>
+        </TouchableWithoutFeedback>
       </View>
     </View>
   )
