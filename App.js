@@ -1,8 +1,17 @@
-import React from 'react'
-
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
+import { defaultState } from './src/defaultState'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons/faCreditCard'
+import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping'
 
 const App = () => {
+
+  const [balanse, setBalanse] = useState(defaultState.basicBalance)
+
+  const getCountBalance = () => setBalanse(prevCount => prevCount - 100);
+  const postCountBalance = () => setBalanse(prevCount => prevCount + 1000);
 
   return (
     <View style={{ flex: 1 }}>
@@ -10,30 +19,36 @@ const App = () => {
         alignItems: 'center',
         justifyContent: 'center',
         height: 50,
-        backgroundColor: '#FFCC00'
-       }}>
+        backgroundColor: '#006600'
+      }}>
         <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>FMoney</Text>
       </View>
 
-       <View style={{
+      <View style={{
         height: '80%',
         // backgroundColor: '#FFCCCC',
-         alignItems: 'center',
-         justifyContent: 'center'
-       }}>
-        <Text>Kontent</Text>
-       </View>
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <Text style={{ fontWeight: 'bold', fontSize: 50 }}>{balanse} &#8381;</Text>
+      </View>
 
       <View style={styles.container}>
         <View style={[styles.position, styles.background]}>
-          <Text>Оля</Text>
+          <FontAwesomeIcon style={{ color: '#006600' }} icon={faChartLine} size={25} />
         </View>
-        <View style={[styles.position, styles.backgroundCenter]}>
-          <Text style={styles.font}>+</Text>
-        </View>
+
+        <TouchableHighlight onPress={getCountBalance}>
+          <View style={[styles.position, styles.backgroundCenter]}>
+            <FontAwesomeIcon icon={faCartShopping} size={32} />
+          </View>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={postCountBalance}>
         <View style={[styles.position, styles.background]}>
-          <Text>Макс</Text>
+          <FontAwesomeIcon style={{ color: '#006600' }} icon={faCreditCard} size={25} />
         </View>
+        </TouchableHighlight>
       </View>
     </View>
   )
@@ -42,7 +57,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFCC00',
+    backgroundColor: '#006600',
     height: 100,
     flexDirection: 'row',
     justifyContent: 'space-around',
