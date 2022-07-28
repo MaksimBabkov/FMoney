@@ -11,10 +11,7 @@ const App = () => {
 
   const count = useSelector((state) => state.countReducer.count)
 
-
   const [balanse, setBalanse] = useState(defaultState.basicBalance)
-
-
 
   const getCountBalance = () => setBalanse(prevCount => prevCount - 100);
   const postCountBalance = () => setBalanse(prevCount => prevCount + 1000);
